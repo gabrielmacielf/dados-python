@@ -13,4 +13,4 @@ Dados_y = Dados_x * Dados_x
 
 # Grafico Boxplot
 plt.boxplot(Dados_y)
-plt.savefig('boxplot.png')
+plt.show()
