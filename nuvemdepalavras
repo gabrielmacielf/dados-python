@@ -1,0 +1,24 @@
+# Pacotes
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
+
+# Frase de exemplo
+Frase = 'Nunca deixe ninguém te dizer que não pode fazer alguma coisa. Se você tem um sonho tem que correr atrás dele. As pessoas não conseguem vencer e dizem que você também não vai vencer. Se você quer uma coisa corre atrás.'
+
+# Gerar nuvem de palavras
+Nuvem_Palavras = WordCloud(
+    background_color='black',
+    width=1600,
+    height=600
+).generate( Frase )
+
+# Criar um gráfico
+fig, ax = plt.subplots(figsize=(10, 7) )
+ax.imshow(Nuvem_Palavras, interpolation='bilinear')
+# Não mostrar eixos
+ax.set_axis_off()
+
+# Salvar nuvem de palavras como arquivo png
+plt.savefig('nuvemdepalavras.png')
