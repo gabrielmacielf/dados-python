@@ -1,0 +1,37 @@
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Definir tema
+sns.set_theme(style='darkgrid')
+
+# Dados
+Base_Dados = sns.load_dataset('tips')
+
+# Verificar
+Base_Dados.head()
+
+# Renomeando as colunas
+Base_Dados.rename( columns={
+    'total_bill' : 'Total Conta',
+    'tip' : 'Gorjeta',
+    'sex' : 'Sexo',
+    'smoker' : 'Fumante',
+    'day' : 'Dia Semana',
+    'time' : 'Periodo',
+    'size' : 'Pessoas na Mesa'
+ }, inplace=True )
+
+print(Base_Dados.head())
+
+# Gráfico relplot
+# Passando outro parametro como classe no gráfico
+sns.relplot( x='Total Conta', y='Gorjeta', data=Base_Dados, hue='Sexo' );
+# Gráfico de Linha com 2 Eixos
+sns.relplot( x='Total Conta', y='Gorjeta', data=Base_Dados, kind='line' );
+# Gráfico de Linha com 2 Eixos
+sns.relplot( x='Total Conta', y='Gorjeta', data=Base_Dados,
+            kind='line', hue='Fumante' );
+sns.histplot( data=Base_Dados, x='Total Conta')
+plt.show()
