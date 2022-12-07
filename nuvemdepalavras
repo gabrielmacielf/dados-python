@@ -20,5 +20,4 @@ ax.imshow(Nuvem_Palavras, interpolation='bilinear')
 # Não mostrar eixos
 ax.set_axis_off()
 
-# Salvar nuvem de palavras como arquivo png
-plt.savefig('nuvemdepalavras.png')
+plt.show()
