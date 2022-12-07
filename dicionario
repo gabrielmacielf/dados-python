@@ -1,0 +1,37 @@
+# Biblioteca para modelagem de dados
+import pandas as pd
+
+# Biblioteca para recursos matemáticos
+import numpy as np
+
+# Biblioteca para plotagem de dados
+import matplotlib.pyplot as plt
+
+# Criando varios dicionarios
+Dicionario_01 = {'A' : [1, 2, 3],
+                 'B' : [-32, -21, -15],
+                 'C' : [60, 10, 20],
+                 'Chave' : ['AA', 'BB', 'CC'] }
+
+Dicionario_02 = {'A' : [6, 7, 8],
+                 'B' : [-39, -28, -17],
+                 'C' : [1000, 10, 60],
+                 'Chave' : ['AA', 'BB', 'CC'] }
+
+Dicionario_03 = {'A' : [11, 12, 13],
+                 'B' : [-39, -22, -11],
+                 'C' : [30, 10, 20],
+                 'Chave' : ['AA', 'BB', 'CC'] }
+
+# Criando varias listas para serem os labels
+Label_01 = ['1º Linha', '2º Linha', '3º Linha']
+Label_02 = ['4º Linha', '5º Linha', '6º Linha']
+Label_03 = ['7º Linha', '8º Linha', '9º Linha']
+
+# Estruturando as bases de dados
+DataFrame_01 = pd.DataFrame( Dicionario_01, index=Label_01 )
+DataFrame_02 = pd.DataFrame( Dicionario_02, index=Label_02 )
+DataFrame_03 = pd.DataFrame( Dicionario_03, index=Label_03 )
+
+# Unindo e exibindo
+print(pd.concat([ DataFrame_01, DataFrame_02, DataFrame_03 ]))
