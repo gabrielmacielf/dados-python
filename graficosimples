@@ -67,4 +67,4 @@ plt.legend(
 );
 
 
-plt.savefig('grafico.png')
+plt.show()
